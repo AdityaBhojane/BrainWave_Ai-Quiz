@@ -60,8 +60,9 @@ import {
     });
   
     const result = await chatSession.sendMessage(`i making an quiz app so i want a object so that i can show questions to user make sure that object in this format 
-    { question: "" , options:{ A:"", B:"", C:"",D:""}, ans:"",explanationInDetails:"" } with ${questionCount} questions of ${topic} also make sure give me only object in plain text format and no other text `);
-    console.log(result.response.text());
+    { question: "" , options:{A:"", B:"", C:"",D:""}, ans:"",explanationInDetails:"" } with ${questionCount} questions of ${topic} also make sure give me only object in plain text format and no other text `);
+    // console.log(result.response.text());
+    return result.response.text()
   }
   
   export default run;

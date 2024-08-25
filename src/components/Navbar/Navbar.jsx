@@ -1,28 +1,40 @@
+import { useQuizContext } from "../../context";
+
+
 function Navbar() {
+  const { quizTopic, setQuizTopic, quizCount, setQuizCount,requestQuiz,setShowOver,setDisable,setCurrentQue} = useQuizContext();
+
   return (
     <>
       <div className="navbar bg-base-100 w-[80%] m-auto">
         <div className="navbar-start flex flex-col">
           <h2 className="text-2xl self-start font-semibold">Ai Quiz</h2>
-          <p className="text-[12px] self-start">Powered by <br /> Gemini flash 1.5+</p>
+          <p className="text-[12px] self-start">
+            Powered by <br /> Gemini flash 1.5+
+          </p>
         </div>
 
         <div className="navbar-end">
           <div className="flex flex-col ">
             <input
+              value={quizTopic}
+              onChange={(e) => setQuizTopic(e.target.value)}
               type="text"
               placeholder="Question Topic"
               className="input input-bordered h-8 my-2 w-36 md:w-auto "
             />
             <input
+              value={quizCount}
+              onChange={(e) => setQuizCount(e.target.value)}
               type="text"
               placeholder="No of Questions"
               className="input input-bordered h-8 w-36 md:w-auto"
             />
           </div>
           <button 
-          className="btn btn-outline btn-success relative  px-2 pt-6 pb-11 mt-2 mx-1"
-          >
+            onClick={()=>{requestQuiz(quizTopic,quizCount); setShowOver(false); setDisable(true); setCurrentQue(0)}}
+           className  ="btn btn-outline btn-success relative  px-2 pt-6 pb-11 mt-2 mx-1"
+           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -39,7 +51,7 @@ function Navbar() {
             </svg>
           </button>
         </div>
-      </div>
+      </div>  
     </>
   );
 }
