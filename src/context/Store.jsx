@@ -13,11 +13,13 @@ export default function Store({ children }) {
   const [error, setError] = useState(false);
   const [currentQue, setCurrentQue] = useState(0);
   const [disable, setDisable] = useState(true);
+  const [showAns,setShowAns] = useState(false)
   const option1 = useRef(null);
   const option2 = useRef(null);
   const option3 = useRef(null);
   const option4 = useRef(null);
   const OptionsArr = [option1, option2, option3, option4];
+
   const obj = {
     quiz,
     setQuiz,
@@ -40,7 +42,8 @@ export default function Store({ children }) {
     option4,
     OptionsArr,
     score,setScore,
-    showOver,setShowOver
+    showOver,setShowOver,
+    showAns,setShowAns
   };
 
   async function requestQuiz(topic, count) {

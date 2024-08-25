@@ -2,7 +2,7 @@ import { useQuizContext } from "../../context";
 
 /* eslint-disable react/prop-types */
 function Buttons({ setCurrentQue }) {
-  const { OptionsArr, setDisable, quiz, currentQue,setShowOver} = useQuizContext();
+  const { OptionsArr, setDisable, quiz, currentQue,setShowOver,setShowAns} = useQuizContext();
   return (
     <>
       <button
@@ -17,6 +17,7 @@ function Buttons({ setCurrentQue }) {
             });
             setCurrentQue((pre) => pre + 1);
             setDisable(true);
+            setShowAns(false);
           }
         }}
         className="btn btn-outline w-1/2 mb-5 mx-auto"

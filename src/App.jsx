@@ -8,17 +8,17 @@ function App() {
   // run("dsa",2)
   const {
     quiz,
-    setQuiz,
-    loading,
-    setLoading,
-    error,
-    setError,
-    disable,
-    score
+    // setQuiz,
+    // loading,
+    // setLoading,
+    // error,
+    // setError,
+    // disable,
+    // score
   } = useQuizContext();
  
-  console.log(quiz.length)  
-  console.log(disable)    
+  console.log(quiz)  
+  // console.log(disable)    
 
 
 

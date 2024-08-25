@@ -18,6 +18,8 @@ function MainCard() {
     option4,
     setScore,
     showOver,
+    showAns,
+    setShowAns
   } = useQuizContext();
 
   function questionResult(no, e) {
@@ -26,9 +28,11 @@ function MainCard() {
         e.currentTarget.className += " alert alert-success";
         setDisable(false);
         setScore((pre) => pre + 1);
+        setShowAns(true);
       } else {
         e.currentTarget.className += " alert alert-error";
         setDisable(false);
+        setShowAns(true)
       }
     }
   }
@@ -115,7 +119,7 @@ function MainCard() {
                       <Buttons setCurrentQue={setCurrentQue} />
                     </div>
                     <div className="text-center mb-5">
-                    <Explanation />
+                    {showAns && <Explanation />}
                     </div> 
                   </div>
                 )}
