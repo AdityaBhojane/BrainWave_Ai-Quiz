@@ -2,7 +2,7 @@ import { useQuizContext } from "../../context";
 
 
 function Navbar() {
-  const { quizTopic, setQuizTopic, quizCount, setQuizCount,requestQuiz,setShowOver,setDisable,setCurrentQue,setShowAns} = useQuizContext();
+  const { quizTopic, setQuizTopic, quizCount, setQuizCount,requestQuiz,setShowOver,setDisable,setCurrentQue,setShowAns,setScore} = useQuizContext();
 
   return (
     <>
@@ -32,7 +32,7 @@ function Navbar() {
             />
           </div>
           <button 
-            onClick={()=>{requestQuiz(quizTopic,quizCount); setShowOver(false); setDisable(true); setCurrentQue(0); setShowAns(false);}}
+            onClick={()=>{requestQuiz(quizTopic,quizCount); setShowOver(false); setDisable(true); setCurrentQue(0); setShowAns(false);setScore(0)}}
            className  ="btn btn-outline btn-success relative  px-2 pt-6 pb-11 mt-2 mx-1"
            >
             <svg
