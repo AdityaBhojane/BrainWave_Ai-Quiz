@@ -50,7 +50,7 @@ function MainCard() {
               <div>
                 {quiz?.length == 0 ? (
                   <h1 className="m-20 text-2xl font-bold">
-                    Welcome to the Ai Quiz Context
+                    Welcome to the BrainWave Ai-Quiz
                   </h1>
                 ) : (
                   <div>
