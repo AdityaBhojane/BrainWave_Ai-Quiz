@@ -2,13 +2,16 @@ import { useQuizContext } from "../../context";
 
 
 function Explanation() {
-  const {quiz,currentQue} = useQuizContext();
+  const {quiz,currentQue,setSeconds} = useQuizContext();
   return (
     <>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <button
         className="btn bg-green-600 text-black hover:bg-green-700"
-        onClick={() => document.getElementById("my_modal_1").showModal()}
+        onClick={() =>{ 
+          setSeconds(99)
+          document.getElementById("my_modal_1").showModal()
+        }}
       >
         Need Explanation ?
       </button>

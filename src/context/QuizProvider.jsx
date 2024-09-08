@@ -19,6 +19,9 @@ export default function Store({ children }) {
   const option3 = useRef(null);
   const option4 = useRef(null);
   const OptionsArr = [option1, option2, option3, option4];
+  const [seconds, setSeconds] = useState(99);
+
+  
 
   const obj = {
     quiz,
@@ -43,7 +46,8 @@ export default function Store({ children }) {
     OptionsArr,
     score,setScore,
     showOver,setShowOver,
-    showAns,setShowAns
+    showAns,setShowAns,
+    seconds, setSeconds
   };
 
   async function requestQuiz(topic, count) {

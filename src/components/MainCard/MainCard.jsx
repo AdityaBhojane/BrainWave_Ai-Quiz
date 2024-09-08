@@ -1,5 +1,6 @@
 import { useQuizContext } from "../../context";
 import Buttons from "../Buttons/Buttons";
+import Countdown from "../Countdown/Countdown";
 import Explanation from "../Explanation/Explanation";
 import Over from "../Over/Over";
 import Skeleton from "../skeleton/Skeleton";
@@ -19,7 +20,8 @@ function MainCard() {
     setScore,
     showOver,
     showAns,
-    setShowAns
+    setShowAns,
+
   } = useQuizContext();
 
   function questionResult(no, e) {
@@ -43,7 +45,7 @@ function MainCard() {
         <Over />
       ) : (
         <div>
-          <div className="mockup-window bg-base-300 border max-w-[80%] min-w-[30%] w-fit m-auto my-20">
+          <div className="mockup-window bg-base-300 border max-w-[80%] min-w-[30%] w-fit m-auto my-20 select-none">
             {loading ? (
               <Skeleton />
             ) : (
@@ -51,9 +53,20 @@ function MainCard() {
                 {quiz?.length == 0 ? (
                   <h1 className="m-20 text-2xl font-bold">
                     Welcome to the BrainWave Ai-Quiz
+                    <div>
+                      <h4 className="text-lg mt-5">Rules :</h4>
+                      <p className="text-lg font-semibold">
+                        1) You have only 90sec for Each Question <br />
+                        2) You can start quiz with any topic <br />
+                        3) After selecting the answer there will be explanation available
+                      </p>
+                    </div>
                   </h1>
                 ) : (
                   <div>
+                    <div className="w-full flex justify-end">
+                    <Countdown/>
+                    </div>
                     <div className="bg-base-200 flex justify-center px-2 py-10 w-full">
                       <div className="w-[90%]">
                         <h2 className="font-bold mb-5">

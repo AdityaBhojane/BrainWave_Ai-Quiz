@@ -1,12 +1,24 @@
 import { useQuizContext } from "../../context";
 
-
 function Navbar() {
-  const { quizTopic, setQuizTopic, quizCount, setQuizCount,requestQuiz,setShowOver,setDisable,setCurrentQue,setShowAns,setScore} = useQuizContext();
+  const {
+    quizTopic,
+    setQuizTopic,
+    quizCount,
+    setQuizCount,
+    requestQuiz,
+    setShowOver,
+    setDisable,
+    setCurrentQue,
+    setShowAns,
+    setScore,
+    loading,
+    setSeconds
+  } = useQuizContext();
 
   return (
     <>
-      <div className="navbar bg-base-100 w-[80%] m-auto">
+      <div className="navbar bg-base-100 w-[80%] m-auto select-none">
         <div className="navbar-start flex flex-col">
           <h2 className="text-2xl self-start font-semibold">Ai Quiz</h2>
           <p className="text-[12px] self-start">
@@ -31,10 +43,20 @@ function Navbar() {
               className="input input-bordered h-8 w-36 md:w-auto"
             />
           </div>
-          <button 
-            onClick={()=>{requestQuiz(quizTopic,quizCount); setShowOver(false); setDisable(true); setCurrentQue(0); setShowAns(false);setScore(0)}}
-           className  ="btn btn-outline btn-success relative  px-2 pt-6 pb-11 mt-2 mx-1"
-           >
+          <button
+            onClick={() => {
+              requestQuiz(quizTopic, quizCount);
+              setShowOver(false);
+              setDisable(true);
+              setCurrentQue(0);
+              setShowAns(false);
+              setScore(0);
+              if(!loading){
+                setSeconds(99)
+              }
+            }}
+            className="btn btn-outline btn-success relative  px-2 pt-6 pb-11 mt-2 mx-1"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -51,7 +73,7 @@ function Navbar() {
             </svg>
           </button>
         </div>
-      </div>  
+      </div>
     </>
   );
 }
