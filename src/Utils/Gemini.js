@@ -59,7 +59,7 @@ import {
       ],
     });
   
-    const result = await chatSession.sendMessage(`i making an quiz app so i want a object so that i can show questions to user make sure that object in this format 
+    const result = await chatSession.sendMessage(`i making an quiz app so i want a object so that i can show questions to user make sure that object in this format for each question multiple objects 
     { question: "" , options:{A:"", B:"", C:"",D:""}, ans:"",explanationInDetails:"" } with ${questionCount} questions of ${topic} also make sure give me only object, and Importantly don't use common questions`);
     // console.log(result.response.text());
     return result.response.text()

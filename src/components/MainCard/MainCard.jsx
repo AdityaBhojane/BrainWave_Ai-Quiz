@@ -38,7 +38,9 @@ function MainCard() {
       }
     }
   }
-
+  // console.log(quiz[currentQue]);
+  // console.log("LOG1",quiz[0]?.options["A"])
+  // console.log("LOG2",quiz[1]?.options["A"])
   return (
     <>
       {showOver ? (
